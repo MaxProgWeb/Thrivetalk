@@ -32,7 +32,7 @@ $screen-lg-max:1199px;
 	color: #070707;
 }
 body{
-	font-family: 'Gilroy-Medium';
+	font-family: 'Gilroy-Medium', sans-serif;
 	font-size: 18px;
 	line-height: 22px;
 }
@@ -254,6 +254,7 @@ a:hover{
 }
 
 #menu__toggle {
+	display: none;
     opacity: 0;
 }
   
@@ -288,9 +289,20 @@ a:hover{
     height: 26px;
   
 	cursor: pointer;
-    z-index: 111;
+    z-index: 11;
 }
-  
+
+.menu__btn_fixed{
+	position: fixed;
+	left: -100%;
+	top: 40px;
+	z-index: 111;
+	transition: all 0.25s 0s;
+}
+#menu__toggle:checked ~ .menu__btn_fixed {
+    visibility: visible;
+    left: 88vw;
+}
 .menu__btn > span,
 .menu__btn > span::before,
 .menu__btn > span::after {
